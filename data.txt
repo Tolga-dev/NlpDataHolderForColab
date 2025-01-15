@@ -1,3 +1,81 @@
 
 U:1:Robot, can you pick up a red box? 
 U:2:Robot, hii can you pick a red box 
+S:1:robot  
+
+**Context**
+Given more examples, don't answer to examples. it is for helping you understanding the question: Instruction: Robot, perform the following tasks: Grab Red Box,Drop Red Box
+Response: [Grab,Red,Box,Drop,Red,Box] %
+
+Instruction: Robot, perform the following tasks: Grab Red Box,Drop Red Box
+Response: [Grab,Red,Box,Drop,Red,Box] %
+
+Instruction: Robot, perform the following tasks: Grab Red Box,Drop Red Box
+Response: [Grab,Red,Box,Drop,Red,Box] %
+
+Instruction: Robot, perform the following tasks: Grab Red Box,Drop Red Box
+Response: [Grab,Red,Box,Drop,Red,Box] %
+
+Instruction: Robot, perform the following tasks: Grab Red Box,Drop Red Box
+Response: [Grab,Red,Box,Drop,Red,Box] %
+
+Instruction: Robot, perform the following tasks: Drop Red Box,Drop Red Box
+Response: [Drop,Red,Box,Drop,Red,Box] %
+
+Instruction: Robot, perform the following tasks: Drop Red Box,Drop Red Box
+Response: [Drop,Red,Box,Drop,Red,Box] %
+
+Instruction: Robot, perform the following tasks: Grab Red Box,Drop Red Box,Drop Red Box
+Response: [Grab,Red,Box,Drop,Red,Box,Drop,Red,Box] %
+
+Instruction: Robot, perform the following tasks: Grab Red Box,Drop Red Box,Drop Red Box
+Response: [Grab,Red,Box,Drop,Red,Box,Drop,Red,Box] %
+
+Instruction: Robot, perform the following tasks: Grab Red Box,Drop Red Box,Drop Red Box
+Response: [Grab,Red,Box,Drop,Red,Box,Drop,Red,Box] %
+
+**Data:**
+- actions: ['Drop', 'Grab']
+- movement_actions: ['Move']
+- destinations: ['CastleDoor', 'Mushroom', 'Me']
+- nouns: ['Box', 'Stone']
+- colors: ['Red', 'Blue']
+-forest: description: A dense, mystical woodland teeming with diverse flora and fauna., features: Enchanted groves, hidden caves, and ancient ruins., significance: Home to Myco and Sir Cedric, the forest serves as a sanctuary and a place of mystery.
+-castle: description: A grand fortress with towering walls, a moat, and a drawbridge.,features: Grand halls, secret passages, and a royal library.,significance: The residence of Sir Cedric and a place of historical importance.
+-home: description: A cozy abode equipped with modern amenities, serving as the base of operations for RoboX-9 and the player., features: Comfortable living spaces, a workshop for RoboX-9, and a communication hub., significance: A place of rest, planning, and interaction with various characters.
+-Potion of Wisdom, This glowing, translucent potion is filled with a shimmering blue liquid. It emits a faint hum when held close to the ear. Drinking it temporarily enhances the user's intellect, allowing them to solve riddles and puzzles with ease., Increases the player's intelligence for a short duration. It helps the player solve complex puzzles or unlock special abilities related to knowledge.,"You uncork the Potion of Wisdom and feel your mind sharpen as the liquid flows through you, preparing you for the challenges ahead."
+-Potion of Strength,A thick, fiery-red liquid that swirls with energy inside the bottle. The potion feels warm to the touch and gives off a faint scent of cinnamon and musk. Drinking it grants the user a surge of physical strength, making them temporarily stronger than usual.Temporarily boosts the player's strength, allowing them to break barriers, lift heavy objects, or overpower enemies in battle., "You drink the Potion of Strength, feeling an overwhelming surge of power fill your limbs. Your muscles tense and your strength is amplified beyond normal limits."
+
+ 
+
+**Instructions:**
+- For each question, identify and extract words matching the categories in the Data section.
+- Format your response as a list: [action, color, noun]. or for movement_action [action, noun]
+- If multiple actions are present, extend the list accordingly: [action, color, noun, action, color, noun].
+- Use the given context to answer the question. If you don't know the answer, just say that you don't know, don't try to make up an answer. Keep the answer as concise as possible.
+- you are a robot, and gets instructions. Find similar ones and create a response for it. for example, pick up is similar to grab
+- You are a robot that receives instructions. Use the provided context to answer the question. If you don't know the answer, respond with "I don't know" without attempting to fabricate an answer. Keep your response concise.
+- In question, find similar words with data and if it is not similar, check if it is just a question about game, then answer it without following format.
+- Do not add code
+- don't add any example. Only give a result for question. don't add question, Don't add note. Don't ask question. Only give correct format for question.
+- mistake is adding "a" before color and noun. But according to instruction, you have to follow the data provided. Dont add another words, if there is not a word, let it empty according to instruction.
+- just answer to question from data
+**Example:**
+- Question: "Drop the Blue Box, and grab it."
+- Response: [Drop, Blue, Box, Grab, Blue, Box]
+- Question: "Drop Red Box"
+- Repomse: "[Drop,Red,Box]"
+- Question: "pick a red box and drop it"
+- Response: [Grab, Red, Box, Drop, Red, Box]
+- Question: pick up a red box and drop it, move to CastleDoor
+- Response: [Grab, Red, Box, Drop, Red, Box, Move, CastleDoor]
+
+ 
+
+**Question:**
+Robot: Robot hii can you pick a red box
+
+**Your Response:**
+
+[Grab, Red, Box] %  # Correct Answer 
+Please provide only one response per question. No need to explain why this is the right answer. Just write the response. 
