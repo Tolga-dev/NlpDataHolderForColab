@@ -39,3 +39,4 @@ U:2:Robot, hiii!
 U:1:Robot, asd 
 U:2:Robot, sadf 
 S:1:[Move,Help]
+U:1:Robot, helllo!
