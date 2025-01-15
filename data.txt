@@ -14,3 +14,4 @@ U:0:Hi!
 U:0:Hi!
 U:1:Hi!
 U:1:Hi!
+S:0:[Move,Help]
